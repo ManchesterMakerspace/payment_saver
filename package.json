@@ -1,0 +1,27 @@
+{
+  "name": "payment_handler",
+  "version": "1.0.0",
+  "description": "Connects to a cloud paypal instant payment notification listener to update a local mongo db ",
+  "main": "payment_handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManchesterMakerspace/payment_handler.js.git"
+  },
+  "keywords": [
+    "payments",
+    "handling"
+  ],
+  "author": "Manchester Makerspace",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ManchesterMakerspace/payment_handler.js/issues"
+  },
+  "homepage": "https://github.com/ManchesterMakerspace/payment_handler.js#readme",
+  "dependencies": {
+    "mongoose": "^4.7.6",
+    "socket.io-client": "^1.7.2"
+  }
+}
