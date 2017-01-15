@@ -37,7 +37,7 @@ var socket = {                                                 // functions for 
         socket.io = socket.io(socketServer);                   // get socket.io method by connectting to our desired socket server
         socket.io.on('connect', function(){                    // once we have connected to IPN lisner
             socket.io.emit('authenticate', authToken);         // its important lisner know that we are for real
-            socket.io.on('genericPaid', socket.handlePayment); // handle generic payment event
+            socket.io.on('payment', socket.handlePayment);     // handle generic payment event
             socket.io.on('rejection', socket.handleRejection); // route to handle auth failure
         });
     },
