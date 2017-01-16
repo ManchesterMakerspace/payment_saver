@@ -2,7 +2,7 @@
   "name": "payment_handler",
   "version": "1.0.0",
   "description": "Connects to a cloud paypal instant payment notification listener to update a local mongo db ",
-  "main": "payment_handler.js",
+  "main": "payment_saver.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
