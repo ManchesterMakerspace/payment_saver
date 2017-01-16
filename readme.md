@@ -12,9 +12,9 @@ Updates payment information for our organization from an external payment notifi
     # ./start.sh to run payment handler
     # npm install -g pm2 # install process management system
 
-    export PORT="3001"
     export MONGODB_URI="mongodb://localhost/makerspacepayments"
     export PAYMENT_NOTIFICATION_SERVER="https://yourPaymentListener.herokuapp.com/"
+    export AUTH_TOKEN="theauthtokenforyourpaymentlistener"
 
     npm install
     pm2 start payment_handler.js
