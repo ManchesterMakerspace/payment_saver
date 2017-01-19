@@ -42,10 +42,14 @@ var socket = {                                                 // functions for 
     io: require('socket.io-client'),                           // client side socket.io library this is a client to IPN listener
     init: function(socketServer, authToken){                   // just need to know server to connect to and pass key to start things off
         socket.io = socket.io(socketServer);                   // get socket.io method by connectting to our desired socket server
-        socket.io.on('connect', function(){                    // once we have connected to IPN lisner
+        socket.io.on('connect', function authenticate(){       // once we have connected to IPN lisner
             socket.io.emit('authenticate', {token: authToken, name:'Payment Saver'}); // its important lisner know that we are for real
-            socket.io.on('payment', socket.handlePay);         // handle generic payment event
         });
+        socket.io.on('disconnect', function whenListererGoesToSleep(){
+            // socket.io.removeListener('payment', socket.handlePay); // removing an event handler if need be. why it needs second arg I have no idea
+            // here we could close connection and let heroku sleep, problem being there would be no way to re-establish connection
+        });
+        socket.io.on('payment', socket.handlePay);             // handle generic payment event: only create this listener once
     },
     handlePay: function(payment){
         console.log(JSON.stringify(payment));
