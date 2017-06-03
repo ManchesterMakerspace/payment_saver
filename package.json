@@ -4,7 +4,7 @@
   "description": "Connects to a cloud paypal instant payment notification listener to update a local mongo db ",
   "main": "payment_saver.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "start-prod": "pm2 start start.sh --name=\"payment_saver\""
   },
   "repository": {
     "type": "git",
